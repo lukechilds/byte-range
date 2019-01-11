@@ -1,4 +1,8 @@
 const byteRange = (bytes, signed = false) => {
+	if (bytes < 1 || !Number.isSafeInteger(bytes)) {
+		throw new TypeError('`bytes` must be a positive integer');
+	}
+
 	let min = 0;
 	let max = (2 ** (bytes * 8)) - 1;
 
