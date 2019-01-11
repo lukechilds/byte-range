@@ -1,7 +1,7 @@
 {
   "name": "byte-range",
   "version": "0.1.0",
-  "description": "Returns integer ranges for C data types",
+  "description": "Returns integer ranges for a given number of bytes",
   "main": "src/index.js",
   "engines": {
     "node": ">=8"
