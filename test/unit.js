@@ -26,3 +26,9 @@ test('byteRange(n, true) returns expected values for signed integers', t => {
 	t.deepEqual(byteRange(5, signed), [-549755813888, 549755813887]);
 	t.deepEqual(byteRange(6, signed), [-140737488355328, 140737488355327]);
 });
+
+test('byteRange(n) defaults to unsigned integers', t => {
+	const signed = false;
+
+	t.deepEqual(byteRange(1), byteRange(1, signed));
+});
