@@ -36,3 +36,7 @@ test('byteRange() throws invalid byte values', t => {
 	t.throws(() => byteRange(0));
 	t.throws(() => byteRange(1.5));
 });
+
+test('byteRange() throws on unsafe ranges', t => {
+	t.throws(() => byteRange(100));
+});
