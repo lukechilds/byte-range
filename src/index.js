@@ -21,4 +21,14 @@ const byteRange = (bytes, opts = {signed: false}) => {
 	return [min, max];
 };
 
+const unsigned = {signed: false};
+byteRange.uint8 = byteRange(1, unsigned);
+byteRange.uint16 = byteRange(2, unsigned);
+byteRange.uint32 = byteRange(4, unsigned);
+
+const signed = {signed: true};
+byteRange.int8 = byteRange(1, signed);
+byteRange.int16 = byteRange(2, signed);
+byteRange.int32 = byteRange(4, signed);
+
 module.exports = byteRange;

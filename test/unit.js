@@ -31,6 +31,18 @@ test('byteRange(n) defaults to unsigned integers', t => {
 	t.deepEqual(byteRange(1), byteRange(1, {signed: false}));
 });
 
+test('precomputed byteRange.x range helpers are correct', t => {
+	const unsigned = {signed: false};
+	t.deepEqual(byteRange.uint8, byteRange(1, unsigned));
+	t.deepEqual(byteRange.uint16, byteRange(2, unsigned));
+	t.deepEqual(byteRange.uint32, byteRange(4, unsigned));
+
+	const signed = {signed: true};
+	t.deepEqual(byteRange.int8, byteRange(1, signed));
+	t.deepEqual(byteRange.int16, byteRange(2, signed));
+	t.deepEqual(byteRange.int32, byteRange(4, signed));
+});
+
 test('byteRange() throws invalid byte values', t => {
 	t.throws(() => byteRange(-1));
 	t.throws(() => byteRange(0));
