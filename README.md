@@ -53,6 +53,57 @@ byteRange.int32;
 // [-2147483648, 2147483647]
 ```
 
+## API
+
+### byteRange(bytes, [options])
+
+Returns integer ranges for a given number of bytes.
+
+#### bytes
+
+Type: `number`<br />
+Default: `undefined`
+
+Number of bytes to return the integer range for. Must be a positive integer.
+
+#### options
+
+Type: `Object`<br />
+Default: `{signed: false}`
+
+An object containing the following properties:
+
+##### signed
+
+Type: `boolean`<br>
+Default: `false`
+
+A boolean indicating whether the integer range is signed.
+
+### byteRange.uint8
+
+Precomputed byte range for an unsigned 8 bit integer.
+
+### byteRange.uint16
+
+Precomputed byte range for an unsigned 16 bit integer.
+
+### byteRange.uint32
+
+Precomputed byte range for an unsigned 32 bit integer.
+
+### byteRange.int8
+
+Precomputed byte range for a signed 8 bit integer.
+
+### byteRange.int16
+
+Precomputed byte range for a signed 16 bit integer.
+
+### byteRange.int32
+
+Precomputed byte range for a signed 32 bit integer.
+
 ## License
 
 MIT © Luke Childs
