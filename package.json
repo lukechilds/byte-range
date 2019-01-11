@@ -1,6 +1,6 @@
 {
   "name": "byte-range",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Returns integer ranges for a given number of bytes",
   "main": "src/index.js",
   "engines": {
