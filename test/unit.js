@@ -6,31 +6,29 @@ test('byteRange is exported', t => {
 });
 
 test('byteRange(n, false) returns expected values for unsigned integers', t => {
-	const signed = false;
+	const opts = {signed: false};
 
-	t.deepEqual(byteRange(1, signed), [0, 255]);
-	t.deepEqual(byteRange(2, signed), [0, 65535]);
-	t.deepEqual(byteRange(3, signed), [0, 16777215]);
-	t.deepEqual(byteRange(4, signed), [0, 4294967295]);
-	t.deepEqual(byteRange(5, signed), [0, 1099511627775]);
-	t.deepEqual(byteRange(6, signed), [0, 281474976710655]);
+	t.deepEqual(byteRange(1, opts), [0, 255]);
+	t.deepEqual(byteRange(2, opts), [0, 65535]);
+	t.deepEqual(byteRange(3, opts), [0, 16777215]);
+	t.deepEqual(byteRange(4, opts), [0, 4294967295]);
+	t.deepEqual(byteRange(5, opts), [0, 1099511627775]);
+	t.deepEqual(byteRange(6, opts), [0, 281474976710655]);
 });
 
 test('byteRange(n, true) returns expected values for signed integers', t => {
-	const signed = true;
+	const opts = {signed: true};
 
-	t.deepEqual(byteRange(1, signed), [-128, 127]);
-	t.deepEqual(byteRange(2, signed), [-32768, 32767]);
-	t.deepEqual(byteRange(3, signed), [-8388608, 8388607]);
-	t.deepEqual(byteRange(4, signed), [-2147483648, 2147483647]);
-	t.deepEqual(byteRange(5, signed), [-549755813888, 549755813887]);
-	t.deepEqual(byteRange(6, signed), [-140737488355328, 140737488355327]);
+	t.deepEqual(byteRange(1, opts), [-128, 127]);
+	t.deepEqual(byteRange(2, opts), [-32768, 32767]);
+	t.deepEqual(byteRange(3, opts), [-8388608, 8388607]);
+	t.deepEqual(byteRange(4, opts), [-2147483648, 2147483647]);
+	t.deepEqual(byteRange(5, opts), [-549755813888, 549755813887]);
+	t.deepEqual(byteRange(6, opts), [-140737488355328, 140737488355327]);
 });
 
 test('byteRange(n) defaults to unsigned integers', t => {
-	const signed = false;
-
-	t.deepEqual(byteRange(1), byteRange(1, signed));
+	t.deepEqual(byteRange(1), byteRange(1, {signed: false}));
 });
 
 test('byteRange() throws invalid byte values', t => {
