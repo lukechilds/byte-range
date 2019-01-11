@@ -14,6 +14,45 @@ Returns the integer range for a given number of bytes or C data types. This is u
 npm install byte-range
 ```
 
+## Usage
+
+Check the integer range for a given number of bytes:
+
+```js
+const byteRange = require('byte-range');
+
+byteRange(1);
+// [0, 255]
+byteRange(2);
+// [0, 65535]
+```
+
+You can check signed or unsigned integer ranges:
+
+```js
+byteRange(1, {signed: false});
+// [0, 255]
+byteRange(1, {signed: true});
+// [-128, 127]
+```
+
+There are also some common C data types precomputed:
+
+```js
+byteRange.uint8;
+// [0, 255]
+byteRange.uint16;
+// [0, 65535]
+byteRange.uint32;
+// [0, 4294967295]
+byteRange.int8;
+// [-128, 127]
+byteRange.int16;
+// [-32768, 32767]
+byteRange.int32;
+// [-2147483648, 2147483647]
+```
+
 ## License
 
 MIT © Luke Childs
