@@ -1,6 +1,11 @@
 const {MIN_SAFE_INTEGER, MAX_SAFE_INTEGER} = Number;
 
-const byteRange = (bytes, opts = {signed: false}) => {
+const byteRange = (bytes, opts) => {
+	opts = {
+		signed: false,
+		...opts
+	};
+
 	if (bytes < 1 || !Number.isSafeInteger(bytes)) {
 		throw new TypeError('`bytes` must be a positive integer');
 	}
